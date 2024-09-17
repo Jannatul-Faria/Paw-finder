@@ -23,7 +23,7 @@ PawFinder is an innovative web-based platform designed to simplify the pet adopt
 - **Framework**: Laravel (PHP)
 - **Database**: MySQL
 - **Authentication**: Laravel Breeze
-- **Frontend**: Blade templates, Bootstrap (or any other CSS framework you used)
+- **Frontend**: Blade templates, Bootstrap
 - **Backend**: PHP, Laravel
 - **Version Control**: Git
 
@@ -33,7 +33,7 @@ To set up this project on your local machine, follow these steps:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/pawfinder.git
+   git clone https://github.com/Jannatul-Faria/Paw-finder.git
    cd pawfinder
    ```
 
@@ -81,9 +81,6 @@ To set up this project on your local machine, follow these steps:
 
 ### Admin Role
 Admins have access to manage users, shelters, animal listings, and generate reports from the admin dashboard.
-
-### Shelter Role
-Shelter staff can manage their profiles, add, edit, and delete animal listings, and communicate with adopters.
 
 ### Adopter Role
 Adopters can create accounts, browse animals, apply for adoption, and track the status of their applications.
