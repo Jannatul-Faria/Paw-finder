@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src=".\\public\backend\assets\images\paw1.jpg" width="130" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src=".\\public\backend\assets\images\paw.png" width="130" alt="Laravel Logo"></a></p>
 
 <h1 align="center">PawFinder - Pet Adoption Portal</h1>
 
