@@ -81,7 +81,7 @@
                                         <td>{{ $adoption->pet->name }}</td>
                                         <td>{{ $adoption->adaptor->name }}</td>
                                         <td>{{ $adoption->city->name }}</td>
-                                        <td>
+                                        <td >
                                             {{ $adoption->status }}
                                         </td>
                                         <td>

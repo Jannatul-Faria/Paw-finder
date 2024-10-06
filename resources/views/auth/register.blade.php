@@ -147,21 +147,7 @@
                                                         I ultricies enim
                                                         at malesuada nibh diam on tortor neaded to throw curve balls.”
                                                     </h4>
-                                                    <div class="mt-4 pt-3 pb-5">
-                                                        <div class="d-flex align-items-start">
-                                                            <div class="flex-shrink-0">
-                                                                <img src="{{ asset('backend') }}/assets/images/users/avater.jpg"
-                                                                    class="avatar-md img-fluid rounded-circle"
-                                                                    alt="...">
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3 mb-4">
-                                                                <h5 class="font-size-18 text-white">Khayrul Shanto
-                                                                </h5>
-                                                                <p class="mb-0 text-white-50">Web Engineer
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                   
                                                 </div>
                                             </div>
 
