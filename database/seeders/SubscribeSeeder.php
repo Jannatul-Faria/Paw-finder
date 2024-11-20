@@ -14,6 +14,6 @@ class SubscribeSeeder extends Seeder
      */
     public function run(): void
     {
-        Subscribe::factory(3)->create();
+        Subscribe::factory(50)->create();
     }
 }

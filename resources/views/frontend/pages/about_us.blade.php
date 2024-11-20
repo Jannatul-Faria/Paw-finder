@@ -219,7 +219,7 @@
                         <div class="counter__item-shape">
                             <img src="{{ asset('frontend') }}/assets/img/images/h2_counter_shape.png" alt="">
                         </div>
-                        <span class="count odometer" data-count="{{ count($pets) }}"></span>
+                        <span class="count odometer" data-count="{{ $pets }}"></span>
                         <p>Total Pets</p>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                         <div class="counter__item-shape">
                             <img src="{{ asset('frontend') }}/assets/img/images/h2_counter_shape.png" alt="">
                         </div>
-                        <span class="count odometer" data-count="{{ count($cities) }}"></span>
+                        <span class="count odometer" data-count="{{ $cities }}"></span>
                         <p>New Listed States</p>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                         <div class="counter__item-shape">
                             <img src="{{ asset('frontend') }}/assets/img/images/h2_counter_shape.png" alt="">
                         </div>
-                        <span class="count odometer" data-count="{{ count($categories) }}"></span>
+                        <span class="count odometer" data-count="{{ $categories }}"></span>
                         <p>All Categories</p>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                         <div class="counter__item-shape">
                             <img src="{{ asset('frontend') }}/assets/img/images/h2_counter_shape.png" alt="">
                         </div>
-                        <span class="count odometer" data-count="{{ count($blogs) }}"></span>
+                        <span class="count odometer" data-count="{{ $blogs }}"></span>
                         <p>Total Blogs</p>
                     </div>
                 </div>

@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ setting()->site_title }}</title>
-    <meta name="description" content="{{ setting()->site_title }}">
+    <title>{{ $settings?->site_title }}</title>
+    <meta name="description" content="{{ $settings?->site_title }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ setting()->site_favicon }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ $settings?->site_favicon }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
