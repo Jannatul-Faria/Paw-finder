@@ -4,6 +4,7 @@ use App\Models\Page;
 use App\Models\GeneralSetting;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Cache;
 
 if (!function_exists('success')) {
 
@@ -65,9 +66,22 @@ if (!function_exists('getGender')) {
         return ['male', 'female', 'others'];
     }
 }
-function setting()
-{
-    return GeneralSetting::first();
+
+if (!function_exists('setting')) {
+    function setting()
+        {
+            // Cache the general settings for the current request
+            static $settings = null;
+    
+            if ($settings === null) {
+                // Fetch and cache the settings in memory
+                $settings = Cache::remember('general_settings', 3600, function () {
+                    return GeneralSetting::first(); // Adjust based on your table structure.
+                });
+            }
+    
+            return $settings;
+    }
 }
 function getPage(){
     return Page::all();

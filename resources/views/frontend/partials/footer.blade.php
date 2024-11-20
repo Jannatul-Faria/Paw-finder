@@ -31,12 +31,12 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer__widget">
                             <div class="footer__logo align-items-center">
-                                <a href="{{ route('web.home') }}"><img src="{{ setting()->site_logo }}" alt="">
-                                    <h3 class="text-white">{{ setting()->site_title }}</h3>
+                                <a href="{{ route('web.home') }}"><img src="{{ $settings?->site_logo }}" alt="">
+                                    <h3 class="text-white">{{ $settings?->site_title }}</h3>
                                 </a>
                             </div>
                             <div class="footer__content footer__content-two">
-                                <p>{{ setting()->site_description }}</p>
+                                <p>{{ $settings?->site_description }}</p>
                             </div>
                             <div class="footer__social">
                                 <h6 class="title">Follow Us On:</h6>
@@ -90,9 +90,9 @@
                             <h4 class="footer__widget-title">Contact</h4>
                             <div class="footer__contact">
                                 <ul class="list-wrap">
-                                    <li>{{ setting()->site_address }}</li>
-                                    <li> {{ setting()->site_phone }}</li>
-                                    <li> {{ setting()->site_email }}</li>
+                                    <li>{{ $settings?->site_address }}</li>
+                                    <li> {{ $settings?->site_phone }}</li>
+                                    <li> {{ $settings?->site_email }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-5">
                         <div class="copyright-text copyright-text-three">
-                            <p>Copyright © {{ setting()->site_footer }}</p>
+                            <p>Copyright © {{ $settings?->site_footer }}</p>
                         </div>
                     </div>
                     <div class="col-lg-7">

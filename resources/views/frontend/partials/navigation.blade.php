@@ -4,9 +4,9 @@
             <div class="row align-items-center">
                 <div class="col-xl-2 col-md-4">
                     <div class="logo text-center">
-                        <a href="{{ route('web.home') }}"><img src="{{ setting()->site_logo }}" alt="Logo"
+                        <a href="{{ route('web.home') }}"><img src="{{ $settings?->site_logo }}" alt="Logo"
                                 style="width: 70px">
-                            <h2>{{ setting()->site_title }} </h2>
+                            <h2>{{ $settings?->site_title }} </h2>
 
                         </a>
                     </div>
@@ -70,8 +70,8 @@
             <nav class="tgmobile__menu-box">
                 <div class="close-btn"><i class="fas fa-times"></i></div>
                 <div class="nav-logo">
-                    <a href="{{ route('web.home') }}"><img src="{{ setting()->site_logo }}" alt="Logo">
-                        <h6>{{ setting()->site_title }}
+                    <a href="{{ route('web.home') }}"><img src="{{ $settings?->site_logo }}" alt="Logo">
+                        <h6>{{ $settings?->site_title }}
                         </h6>
                     </a>
 

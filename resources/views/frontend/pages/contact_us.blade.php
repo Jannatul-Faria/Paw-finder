@@ -51,19 +51,19 @@
                                     <div class="icon">
                                         <i class="flaticon-phone"></i>
                                     </div>
-                                    <a href="{{ setting()->site_phone }}">{{ setting()->site_phone }}</a>
+                                    <a href="{{ $settings?->site_phone }}">{{ $settings?->site_phone }}</a>
                                 </li>
                                 <li>
                                     <div class="icon">
                                         <i class="flaticon-placeholder"></i>
                                     </div>
-                                    {{ setting()->site_address }}
+                                    {{ $settings?->site_address }}
                                 </li>
                                 <li>
                                     <div class="icon">
                                         <i class="flaticon-mail"></i>
                                     </div>
-                                    <a href="{{ setting()->site_email }}">{{ setting()->site_email }}</a>
+                                    <a href="{{ $settings?->site_email }}">{{ $settings?->site_email }}</a>
                                 </li>
                                 <li>
                                     <div class="icon">

@@ -17,80 +17,120 @@ use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
+
+    /*
+========================================= home function ==============================================
+    **/
     public function home()
     {
         $data['pages'] = Page::all();
         $data['allBrand'] = Brand::all();
         $data['blogs'] = Blog::limit(3)->latest()->get();
         $data['categories'] = Category::all();
-        $data['cities'] = City::withCount('pets')->limit(4)->latest()->get();
+        $data['cities'] = City::all();
         $data['pets'] = Pet::with('cities')->limit(4)->latest()->get();
-
+        $data['settings'] = setting();
 
         return view('frontend.pages.home')->with($data);
     }
-
+ /*
+========================================= pets function ==============================================
+    **/
     public function pets()
     {
-        $data['allBrand'] = Brand::all();
-        $data['blogs'] = Blog::limit(3)->latest()->get();
+        $data['pets'] = Pet::limit(6)->latest()->get();
+        // $data['allBrand'] = Brand::all(); 
+        // $data['blogs'] = Blog::limit(3)->latest()->get();
         $data['categories'] = Category::withCount('pets')->get();
         $data['cities'] = City::withCount('pets')->get();
-        $data['pets'] = Pet::latest()->get();
+       
+        $data['settings']=setting();
 
         return view('frontend.pages.pets')->with($data);
     }
-
+ /*
+========================================= singlePet function ==============================================
+    **/
     public function singlePet(Pet $pet)
     {
         $cities = city::get();
-        return view('frontend.pages.single_pet', compact('pet', 'cities'));
-    }
+        $settings = setting();
 
+        return view('frontend.pages.single_pet', compact(['pet', 'cities', 'settings']));
+        // $data['pets'] = Pet::get();
+        // $data['cities'] = City::get();
+        // $data['settings']=setting();
+
+        // return view('frontend.pages.single_pet')->with($data);
+
+    }
+ /*
+========================================= blogs function ==============================================
+    **/
     public function blogs()
     {
-        $data['allBrand'] = Brand::all();
+        // $data['allBrand'] = Brand::all();
         $data['blogs'] = Blog::latest()->limit(4)->get();
         $data['categories'] = Category::limit(5)->inRandomOrder()->get();
-        $data['cities'] = City::all();
-        $data['pets'] = Pet::latest()->get();
+        // $data['cities'] = City::all();
+        // $data['pets'] = Pet::latest()->get();
+        $data['settings'] = setting();
 
         return view('frontend.pages.blogs')->with($data);
     }
-
+ /*
+========================================= singleBlog function ==============================================
+    **/
     public function singleBlog(Blog $blog)
     {
         $categories = Category::limit(5)->inRandomOrder()->get();
-        return view('frontend.pages.single_blog', compact('blog', 'categories'));
+        $settings = setting();
+        return view('frontend.pages.single_blog', compact('blog', 'categories','settings'));
     }
-
+ /*
+========================================= aboutUs function ==============================================
+    **/
     public function aboutUs()
     {
-        $data['blogs'] = Blog::all();
-        $data['categories'] = Category::all();
-        $data['cities'] = City::all();
-        $data['pets'] = Pet::all();
+
+        $data['pets'] = Pet::count();
+        $data['blogs'] = Blog::count();
+        $data['categories'] = Category::count();
+        $data['cities'] = City::count();
+       
+        $data['settings'] = setting();
 
         return view('frontend.pages.about_us')->with($data);
         
     }
-
+ /*
+========================================= contactUs function ==============================================
+    **/
     public function contactUs()
     {
-        return view('frontend.pages.contact_us');
+        $data['settings'] = setting();
+        return view('frontend.pages.contact_us')->with($data);
     }
+     /*
+========================================= userDashboard function ==============================================
+    **/
     public function userDashboard()
     {
         $adoptions = Adoption::where('adopter_id', Auth::user()->id)->get();
 
         return view('frontend.pages.dashboard', compact('adoptions'));
     }
+     /*
+========================================= singlePage function ==============================================
+    **/
     public function singlePage($slug)
     {
         $page = Page::where('slug', $slug)->first();
         return view('frontend.pages.single_page', compact('page'));
     }
-
+ /*
+========================================= adoptionStore function ==============================================
+    **/
     public function adoptionStore(Request $request)
     {
         $request->validate([
@@ -114,10 +154,16 @@ class HomeController extends Controller
         return redirect()->route('user-dashboard');
     }
    
-
+ /*
+========================================= profileUpdate function ==============================================
+    **/
     public function profileUpdate(){
         return view('profile.partials.update-profile-information-form');
     }
+
+     /*
+========================================= profileStore function ==============================================
+    **/
      public function profileStore(Request $request){
         if ($request->hasFile('image')) {
             deleteImage(Auth::user()->image);
@@ -158,6 +204,10 @@ class HomeController extends Controller
         notyf()->addSuccess('Profile has been update successfully.');
         return redirect()->route('profile.update');
     }
+
+     /*
+========================================= chengePassword function ==============================================
+    **/
     public function chengePassword(Request $request){
         $request->validate([
             'current_password' => 'required|string',
