@@ -29,7 +29,7 @@
                         Pet</a>
                 </div>
                 <div class="card-body">
-                    <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
+                    <table id="datatable" class="table table-bordered dt-responsive  w-100">
                         <thead>
                             <tr>
                                 <th style="width:10%"class="text-center">Image</th>
@@ -51,9 +51,10 @@
                                     <td>{{ $pet->gender }}</td>
                                     {{-- <td>{{ $pet->cities_count }} </td> --}}
                                     <td>
-                                        @foreach ($pet->cities as $city)
+                                        {{-- @foreach ($pet->cities as $city)
                                             {{ $city->name }} ,
-                                        @endforeach
+                                        @endforeach --}}
+                                       {{ $pet->cities->pluck('name')->join(', ')}}
                                     </td>
 
                                     <td width="10%" class="text-center">
@@ -86,6 +87,9 @@
                         </tbody>
                     </table>
                 </div>
+                {{-- <div class="pagination">
+                    {{ $pets->links() }} <!-- Pagination links -->
+                </div> --}}
             </div>
         </div>
     </div>

@@ -11,7 +11,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('role')->where('role_id', 2)->get();
-        return view('admin.pages.users.index', compact('users'));
+        $settings = setting();
+        return view('admin.pages.users.index', compact('users','settings'));
     }
 
     public function create()

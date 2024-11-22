@@ -13,7 +13,8 @@ class AdoptionController extends Controller
     public function index()
     {
         $adoptions = Adoption::all();
-        return view('admin.pages.adoptionRequest.index', compact('adoptions'));
+        $settings = setting();
+        return view('admin.pages.adoptionRequest.index', compact('adoptions','settings'));
     }
 
     /**

@@ -19,21 +19,22 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        $data['adoptions'] = Adoption::all();
-        $data['users'] = User::all();
-        $data['allBrand'] = Brand::all();
-        $data['blogs'] = Blog::all();
-        $data['categories'] = Category::all();
-        $data['cities'] = City::all();
-        $data['pets'] = Pet::all();
-        $data['subscribers'] = Subscribe::all();
+        $data['adoptions'] = Adoption::count();
+        $data['users'] = User::count();
+        $data['allBrand'] = Brand::count();
+        $data['blogs'] = Blog::count();
+        $data['categories'] = Category::count();
+        $data['cities'] = City::count();
+        $data['pets'] = Pet::count();
+        $data['subscribers'] = Subscribe::count();
+        $data['settings'] = setting();
 
         return view('admin.pages.dashboard')->with($data);
        
     }
     public function generalSetting(){
-        $setting = GeneralSetting::first();
-        return view('admin.pages.settings.setting',compact('setting'));
+        $settings = GeneralSetting::first();
+        return view('admin.pages.settings.setting',compact('settings'));
     }
 
     public function general_settings_update(Request $request)

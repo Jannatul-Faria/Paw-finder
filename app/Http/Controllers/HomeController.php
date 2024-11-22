@@ -117,8 +117,9 @@ class HomeController extends Controller
     public function userDashboard()
     {
         $adoptions = Adoption::where('adopter_id', Auth::user()->id)->get();
+        $settings = setting();
 
-        return view('frontend.pages.dashboard', compact('adoptions'));
+        return view('frontend.pages.dashboard', compact('adoptions','settings'));
     }
      /*
 ========================================= singlePage function ==============================================

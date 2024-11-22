@@ -28,7 +28,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Adoption Request</p>
-                                    <h4 class="mb-0">{{ count($adoptions) }}</h4>
+                                    <h4 class="mb-0">{{ $adoptions}}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -48,7 +48,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Category</p>
-                                    <h4 class="mb-0">{{ count($categories) }}</h4>
+                                    <h4 class="mb-0">{{ $categories }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -68,7 +68,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Blog</p>
-                                    <h4 class="mb-0">{{ count($blogs) }}</h4>
+                                    <h4 class="mb-0">{{ $blogs }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center ">
@@ -88,7 +88,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Users</p>
-                                    <h4 class="mb-0">{{ count($users) }}</h4>
+                                    <h4 class="mb-0">{{ $users }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -108,7 +108,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Pets</p>
-                                    <h4 class="mb-0">{{ count($pets) }}</h4>
+                                    <h4 class="mb-0">{{ $pets }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -128,7 +128,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Brands</p>
-                                    <h4 class="mb-0">{{ count($allBrand) }}</h4>
+                                    <h4 class="mb-0">{{ $allBrand }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -148,7 +148,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Cities</p>
-                                    <h4 class="mb-0">{{ count($cities) }}</h4>
+                                    <h4 class="mb-0">{{ $cities }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -168,7 +168,7 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium">Total Subscribers</p>
-                                    <h4 class="mb-0">{{ count($subscribers) }}</h4>
+                                    <h4 class="mb-0">{{ $subscribers }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">

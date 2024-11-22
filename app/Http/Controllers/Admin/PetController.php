@@ -16,8 +16,11 @@ class PetController extends Controller
      */
     public function index()
     {
-        $pets = Pet::withCount('cities')->orderBy('created_at', 'desc')->get();
-        return view('admin.pages.pet.index', compact('pets'));
+        $pets = Pet::with(['cities'])->withCount('cities')->orderBy('created_at', 'desc')->paginate(20);
+        $settings = setting();
+        
+        return view('admin.pages.pet.index', compact('pets','settings'));
+
     }
 
     /**
@@ -28,7 +31,8 @@ class PetController extends Controller
         $categories = Category::all();
         $cities = City::all();
         $species = Species::all();
-        return view('admin.pages.pet.create', compact('species', 'cities', 'categories'));
+        $settings = setting();
+        return view('admin.pages.pet.create', compact('species', 'cities', 'categories','settings'));
     }
 
     /**

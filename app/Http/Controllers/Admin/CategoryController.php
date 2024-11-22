@@ -16,7 +16,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('admin.pages.category.category_list', compact('categories'));
+        $settings = setting();
+        return view('admin.pages.category.category_list', compact('categories','settings'));
     }
 
     /**

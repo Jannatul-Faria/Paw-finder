@@ -14,7 +14,7 @@
     <meta content="Code " name="description" />
     <meta content="Khayrul Shanto" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ setting()->site_favicon }}">
+    <link rel="shortcut icon" href="{{ $settings?->site_favicon }}">
     <!-- Sweetalert2 -->
     <link href="{{ asset('backend') }}/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <!-- choices css -->

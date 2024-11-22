@@ -14,7 +14,8 @@ class SubscribeController extends Controller
     public function index()
     {
         $subscribers = Subscribe::get();
-        return view('admin.pages.subscribers.index',compact('subscribers'));
+        $settings = setting();
+        return view('admin.pages.subscribers.index',compact('subscribers','settings'));
     }
 
     /**

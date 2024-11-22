@@ -15,7 +15,8 @@ class CityController extends Controller
     public function index()
     {
         $cities = City::withCount('pets')->get();
-        return view('admin.pages.city.city_list', compact('cities'));
+        $settings = setting();
+        return view('admin.pages.city.city_list', compact('cities','settings'));
     }
 
     /**

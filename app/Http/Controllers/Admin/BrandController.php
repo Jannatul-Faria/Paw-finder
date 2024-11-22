@@ -14,7 +14,8 @@ class BrandController extends Controller
     public function Index()
     {
         $allBrand = Brand::all();
-        return view('admin.pages.brand.index', compact('allBrand'));
+        $settings = setting();
+        return view('admin.pages.brand.index', compact('allBrand','settings'));
     }
 
     public function create(Request $request)

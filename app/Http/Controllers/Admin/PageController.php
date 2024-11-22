@@ -12,7 +12,8 @@ class PageController extends Controller
     public function Index()
     {
         $allPage = Page::all();
-        return view('admin.pages.page.index', compact('allPage'));
+        $settings = setting();
+        return view('admin.pages.page.index', compact('allPage','settings'));
     }
 
     public function create(Request $request)
