@@ -91,7 +91,6 @@ Adopters can create accounts, browse animals, apply for adoption, and track the 
 The MySQL database for PawFinder includes the following key tables:
 
 
-
 - `users`: Stores user information (admin, shelters, adopters).
 - `animals`: Stores animal details such as breed, age, size, photos, videos, and more.
 - `adoption_applications`: Stores adoption application data and tracks its status.
